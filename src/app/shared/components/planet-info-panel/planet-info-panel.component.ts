@@ -29,6 +29,18 @@ import { CommonModule } from '@angular/common';
             <p>{{ planet().moreDetails.history }}</p>
           </div>
           <div class="detail-section">
+            <h4>GEOLOGIA</h4>
+            <p>{{ planet().moreDetails.geology }}</p>
+          </div>
+          <div class="detail-section">
+            <h4>CLIMA</h4>
+            <p>{{ planet().moreDetails.climate }}</p>
+          </div>
+          <div class="detail-section">
+            <h4>POTENCIAL DE VIDA</h4>
+            <p>{{ planet().moreDetails.potentialForLife }}</p>
+          </div>
+          <div class="detail-section">
             <h4>SABIAS QUE?</h4>
             <p class="fact">{{ planet().moreDetails.fact }}</p>
           </div>

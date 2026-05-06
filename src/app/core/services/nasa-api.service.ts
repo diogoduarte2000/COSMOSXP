@@ -31,7 +31,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: 'Composta por hidrogénio (73%) e hélio (25%).',
           history: 'Observado desde a antiguidade; missões modernas como a Parker Solar Probe estudam a sua corona.',
-          fact: 'O Sol contém 99.8% da massa total de todo o sistema solar.'
+          fact: 'O Sol contém 99.8% da massa total de todo o sistema solar.',
+          geology: 'Não possui superfície sólida; é uma bola de plasma mantida pela gravidade.',
+          climate: 'Dominado por ventos solares e ejeções de massa coronal.',
+          potentialForLife: 'Impossível para a vida como a conhecemos devido às temperaturas extremas.'
         }
       },
       { 
@@ -45,7 +48,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: 'Exosfera extremamente fina de oxigénio, sódio e hidrogénio.',
           history: 'Visitado pela Mariner 10 e Messenger. BepiColombo está a caminho.',
-          fact: 'Um dia em Mercúrio dura 59 dias terrestres.'
+          fact: 'Um dia em Mercúrio dura 59 dias terrestres.',
+          geology: 'Superfície rochosa coberta de crateras, semelhante à Lua.',
+          climate: 'Temperaturas variam de -180°C à noite a 430°C durante o dia.',
+          potentialForLife: 'Muito baixo devido à radiação solar e falta de atmosfera.'
         }
       },
       { 
@@ -59,7 +65,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: 'Densa e tóxica, composta principalmente por dióxido de carbono com nuvens de ácido sulfúrico.',
           history: 'Muitas missões soviéticas Venera conseguiram aterrar e transmitir dados por curtos períodos.',
-          fact: 'Vénus roda na direção oposta à maioria dos planetas (rotação retrógrada).'
+          fact: 'Vénus roda na direção oposta à maioria dos planetas (rotação retrógrada).',
+          geology: 'Superfície vulcânica com vastas planícies e montanhas deformadas.',
+          climate: 'Efeito de estufa extremo; chove ácido sulfúrico nas camadas superiores.',
+          potentialForLife: 'Possibilidade teórica de vida microbiana nas camadas altas e frias da atmosfera.'
         }
       },
       { 
@@ -74,7 +83,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: '78% Nitrogénio, 21% Oxigénio - a mistura perfeita para a vida.',
           history: 'O único planeta não nomeado após um deus grego ou romano.',
-          fact: 'A Terra é o planeta mais denso do sistema solar.'
+          fact: 'A Terra é o planeta mais denso do sistema solar.',
+          geology: 'Tectónica de placas ativa, crosta rochosa, manto e núcleo de ferro.',
+          climate: 'Variado, regulado pelos oceanos e pela atmosfera.',
+          potentialForLife: '100% - Lar de milhões de espécies conhecidas.'
         }
       },
       { 
@@ -88,7 +100,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: 'Fina, composta por 95% de dióxido de carbono.',
           history: 'Alvo principal para a colonização humana futura. Explorado por rovers desde os anos 90.',
-          fact: 'Marte tem a montanha mais alta do sistema solar, o Monte Olimpo.'
+          fact: 'Marte tem a montanha mais alta do sistema solar, o Monte Olimpo.',
+          geology: 'Deserto gelado com rochas ricas em óxido de ferro (ferrugem).',
+          climate: 'Frio e seco, com tempestades de poeira globais ocasionais.',
+          potentialForLife: 'Elevado interesse; busca por fósseis de vida microbiana antiga.'
         }
       },
       { 
@@ -102,7 +117,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: 'Principalmente hidrogénio e hélio, com nuvens de amónia.',
           history: 'Explorado pela Pioneer, Voyager, Galileo e atualmente pela sonda Juno.',
-          fact: 'Júpiter tem o dia mais curto do sistema solar, completando uma rotação em apenas 10 horas.'
+          fact: 'Júpiter tem o dia mais curto do sistema solar, completando uma rotação em apenas 10 horas.',
+          geology: 'Não tem superfície sólida; provável núcleo rochoso cercado por hidrogénio metálico.',
+          climate: 'Tempestades gigantescas e ventos que chegam a 600 km/h.',
+          potentialForLife: 'Improvável no planeta, mas promissor nas suas luas (Europa).'
         }
       },
       { 
@@ -117,7 +135,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: '75% hidrogénio e 25% hélio.',
           history: 'A missão Cassini-Huygens revolucionou o nosso conhecimento sobre Saturno e as suas luas.',
-          fact: 'Os anéis de Saturno são compostos principalmente por pedaços de gelo e rocha.'
+          fact: 'Os anéis de Saturno são compostos principalmente por pedaços de gelo e rocha.',
+          geology: 'Gigante gasoso com provável núcleo denso de rocha e gelo.',
+          climate: 'Tempestades polares hexagonais únicas e ventos fortíssimos.',
+          potentialForLife: 'Possibilidade nas luas como Titã e Encélado (oceanos subterrâneos).'
         }
       },
       { 
@@ -131,7 +152,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: 'Hidrogénio, hélio e metano (que lhe dá a cor azul).',
           history: 'Apenas a Voyager 2 o visitou de perto em 1986.',
-          fact: 'Urano é o planeta mais frio do sistema solar, com temperaturas mínimas de -224°C.'
+          fact: 'Urano é o planeta mais frio do sistema solar, com temperaturas mínimas de -224°C.',
+          geology: 'Manto de gelos fluidos (água, metano e amónia) sobre núcleo rochoso.',
+          climate: 'Atmosfera calma comparada com outros gigantes, mas com ventos frios.',
+          potentialForLife: 'Muito baixo devido às temperaturas e pressões extremas.'
         }
       },
       { 
@@ -145,7 +169,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: 'Similar a Urano, mas com ventos muito mais intensos.',
           history: 'Descoberto através de previsões matemáticas antes de ser observado por telescópio.',
-          fact: 'Netuno tem os ventos mais rápidos do sistema solar, atingindo 2.100 km/h.'
+          fact: 'Netuno tem os ventos mais rápidos do sistema solar, atingindo 2.100 km/h.',
+          geology: 'Composto principalmente por gelos e rocha no núcleo.',
+          climate: 'Clima dinâmico com tempestades em evolução constante.',
+          potentialForLife: 'Muito improvável devido às condições extremas.'
         }
       },
       { 
@@ -159,7 +186,10 @@ export class NasaApiService {
         moreDetails: {
           atmosphere: 'Fina e sazonal, composta por nitrogénio, metano e monóxido de carbono.',
           history: 'Explorado pela New Horizons em 2015, revelando um mundo geologicamente ativo.',
-          fact: 'Plutão é por vezes mais próximo do Sol do que Netuno devido à sua órbita elíptica.'
+          fact: 'Plutão é por vezes mais próximo do Sol do que Netuno devido à sua órbita elíptica.',
+          geology: 'Superfície de nitrogénio congelado com montanhas de água congelada.',
+          climate: 'Extremamente frio, atmosfera congela quando se afasta do Sol.',
+          potentialForLife: 'Muito baixo, embora possa ter um oceano líquido subterrâneo.'
         }
       }
     ];

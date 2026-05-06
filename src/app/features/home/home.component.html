@@ -2,21 +2,12 @@
   <canvas #homeCanvas></canvas>
 
   <div class="ui-overlay">
-    <div class="logo-container">
-      <h1>
-        <span>C</span>
-        <span>O</span>
-        <span>S</span>
-        <span>M</span>
-        <span>O</span>
-        <span>S</span>
-        <span>X</span>
-        <span>P</span>
-      </h1>
-      <p class="subtitle">EXPLORE O INFINITO</p>
-    </div>
+    <h1 class="logo">COSMOSXP</h1>
+    <p class="subtitle">EXPLORE O INFINITO</p>
+    
+    <div class="launch-hint">CLICA EM QUALQUER LADO PARA VIAJAR</div>
 
-    <button class="launch-btn" (click)="onLaunch()" [disabled]="isLaunching">
+    <button class="launch-btn" (click)="$event.stopPropagation(); onLaunch()" [disabled]="isLaunching">
       <span class="btn-text">CLICA PARA COMEÇAR</span>
       <div class="btn-glow"></div>
     </button>
