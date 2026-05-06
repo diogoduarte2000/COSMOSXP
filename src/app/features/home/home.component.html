@@ -1,1 +1,24 @@
-<p>home works!</p>
+<div class="home-container">
+  <canvas #homeCanvas></canvas>
+
+  <div class="ui-overlay">
+    <div class="logo-container">
+      <h1>
+        <span>C</span>
+        <span>O</span>
+        <span>S</span>
+        <span>M</span>
+        <span>O</span>
+        <span>S</span>
+        <span>X</span>
+        <span>P</span>
+      </h1>
+      <p class="subtitle">EXPLORE O INFINITO</p>
+    </div>
+
+    <button class="launch-btn" (click)="onLaunch()" [disabled]="isLaunching">
+      <span class="btn-text">CLICA PARA COMEÇAR</span>
+      <div class="btn-glow"></div>
+    </button>
+  </div>
+</div>

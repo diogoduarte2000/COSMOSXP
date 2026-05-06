@@ -1,1 +1,37 @@
-<p>solar-system works!</p>
+<div class="solar-container">
+  <canvas #solarCanvas></canvas>
+
+  <div class="ui-overlay" [class.hidden]="isViewingPlanet()">
+    <div class="hud">
+      <div class="title">SISTEMA SOLAR</div>
+      <div class="instruction">CLICA NUM PLANETA PARA EXPLORAR</div>
+    </div>
+
+    <!-- Planet Labels -->
+    <div *ngFor="let p of planetLabels" 
+         class="planet-label" 
+         [style.left.px]="p.x" 
+         [style.top.px]="p.y"
+         [class.visible]="!isViewingPlanet()">
+      <div class="label-dot"></div>
+      <span class="label-name">{{ p.name }}</span>
+    </div>
+  </div>
+
+  <div class="speed-controller" [class.hidden]="isViewingPlanet()">
+    <label>VELOCIDADE: x{{ speedMultiplier() }}</label>
+    <input type="range" min="0" max="20" step="0.5" 
+           [value]="speedMultiplier()" 
+           (input)="updateSpeed($event)">
+  </div>
+
+  <button class="back-btn" *ngIf="isViewingPlanet()" (click)="resetView()">
+    ← VOLTAR AO SISTEMA
+  </button>
+
+  <app-planet-info-panel 
+    [planet]="selectedPlanet()" 
+    (onClose)="resetView()"
+    *ngIf="isViewingPlanet()">
+  </app-planet-info-panel>
+</div>

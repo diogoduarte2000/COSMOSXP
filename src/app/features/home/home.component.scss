@@ -1,0 +1,109 @@
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ui-overlay {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    pointer-events: none;
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 4rem;
+
+      h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(4rem, 15vw, 10rem);
+        font-weight: 900;
+        color: #fff;
+        margin: 0;
+        letter-spacing: 1rem;
+        line-height: 1;
+        display: flex;
+
+        span {
+          display: inline-block;
+          text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+      }
+
+      .subtitle {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.2rem;
+        letter-spacing: 0.8rem;
+        margin-top: 1rem;
+        font-weight: 300;
+      }
+    }
+
+    .launch-btn {
+      pointer-events: all;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 1.5rem 4rem;
+      color: #fff;
+      font-size: 1.2rem;
+      letter-spacing: 0.5rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      animation: pulse 2s infinite;
+
+      &:hover {
+        border-color: #fff;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        animation: none;
+
+        .btn-glow {
+          opacity: 1;
+        }
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: wait;
+      }
+
+      .btn-text {
+        position: relative;
+        z-index: 2;
+      }
+
+      .btn-glow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
