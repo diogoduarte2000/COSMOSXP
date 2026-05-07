@@ -83,20 +83,20 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   private animateEntrance(): void {
-    gsap.from('.logo-container h1 span', {
-      y: 100,
+    gsap.from('.logo', {
+      y: 50,
       opacity: 0,
-      stagger: 0.1,
       duration: 1.5,
       ease: 'power4.out'
     });
 
-    gsap.from('.launch-btn', {
-      scale: 0,
+    gsap.from('.subtitle, .launch-hint, .launch-btn', {
+      y: 30,
       opacity: 0,
-      delay: 1,
+      stagger: 0.2,
+      delay: 0.5,
       duration: 1,
-      ease: 'back.out(1.7)'
+      ease: 'power2.out'
     });
   }
 

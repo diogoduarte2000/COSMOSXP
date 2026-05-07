@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -46,6 +46,12 @@ import { CommonModule } from '@angular/common';
           </div>
         </div>
 
+        <!-- Extra Narrative Section -->
+        <div class="narrative-section" [class.visible]="showNarrative()">
+          <h3>HISTÓRIA PROFUNDA</h3>
+          <p>{{ planet().narrative }}</p>
+        </div>
+
         <div class="stats">
           <div class="stat">
             <span class="label">Raio Relativo</span>
@@ -58,7 +64,9 @@ import { CommonModule } from '@angular/common';
         </div>
       </div>
       <div class="panel-footer">
-        <button class="view-more">VER MAIS DETALHES</button>
+        <button class="view-more" (click)="toggleNarrative()">
+          {{ showNarrative() ? 'VER MENOS' : 'VER MAIS DETALHES' }}
+        </button>
       </div>
     </div>
   `,
@@ -68,11 +76,11 @@ import { CommonModule } from '@angular/common';
       right: 2rem;
       top: 50%;
       transform: translateY(-50%);
-      width: 400px;
+      width: 450px;
       max-height: 85vh;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(20px);
-      border-left: 3px solid #00ffcc;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(25px);
+      border-left: 4px solid #00ffcc;
       padding: 2.5rem;
       color: #fff;
       z-index: 1000;
@@ -174,6 +182,37 @@ import { CommonModule } from '@angular/common';
       }
     }
 
+    .narrative-section {
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.5s ease;
+      margin-bottom: 0;
+
+      &.visible {
+        height: auto;
+        opacity: 1;
+        margin-bottom: 2.5rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+      }
+
+      h3 {
+        font-size: 0.8rem;
+        color: #00ffcc;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        white-space: pre-wrap;
+      }
+    }
+
     .stats {
       display: grid;
       gap: 1rem;
@@ -192,18 +231,25 @@ import { CommonModule } from '@angular/common';
 
     .view-more {
       width: 100%;
-      padding: 1rem;
+      padding: 1.2rem;
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff;
-      letter-spacing: 2px;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      font-weight: 700;
+      letter-spacing: 3px;
       cursor: pointer;
       transition: all 0.3s;
-      &:hover { background: #fff; color: #000; }
+      text-transform: uppercase;
+      &:hover { background: #00ffcc; color: #000; }
     }
   `]
 })
 export class PlanetInfoPanelComponent {
   planet = input<any>();
   onClose = output<void>();
+  showNarrative = signal(false);
+
+  toggleNarrative() {
+    this.showNarrative.set(!this.showNarrative());
+  }
 }

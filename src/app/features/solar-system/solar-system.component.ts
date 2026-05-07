@@ -61,18 +61,22 @@ export class SolarSystemComponent implements AfterViewInit, OnDestroy {
     sunLight.position.set(0, 0, 0);
     scene.add(sunLight);
 
-    // Create Sun
+    // Create Planets
+    const planetsData = this.nasaApi.getPlanetsData(); // Don't filter out Sun
+    const sunData = planetsData.find(p => p.name === 'Sun');
+    
+    // Create Sun Mesh
     const sunGeometry = new THREE.SphereGeometry(8, 64, 64);
     const sunMaterial = new THREE.MeshBasicMaterial({ 
       map: this.textureLoader.load('textures/sun.png'),
     });
     const sun = new THREE.Mesh(sunGeometry, sunMaterial);
     scene.add(sun);
-
-    // Create Planets
-    const planetsData = this.nasaApi.getPlanetsData().filter(p => p.name !== 'Sun');
     
-    planetsData.forEach(data => {
+    // Add Sun to planets array for labels and clicking
+    this.planets.push({ mesh: sun, data: sunData, orbitGroup: new THREE.Group() });
+
+    planetsData.filter(p => p.name !== 'Sun').forEach(data => {
       const orbitGroup = new THREE.Group();
       scene.add(orbitGroup);
 
