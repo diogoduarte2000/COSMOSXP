@@ -57,8 +57,8 @@ export class GalaxyComponent implements AfterViewInit, OnDestroy {
 
     // Shaders
     const [vert, frag] = await Promise.all([
-      fetch('shaders/galaxy.vert').then(r => r.text()),
-      fetch('shaders/galaxy.frag').then(r => r.text())
+      fetch('/shaders/galaxy.vert').then(r => r.text()),
+      fetch('/shaders/galaxy.frag').then(r => r.text())
     ]);
 
     this.generateGalaxy(vert, frag);

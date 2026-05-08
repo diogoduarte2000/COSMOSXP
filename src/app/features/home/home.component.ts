@@ -41,9 +41,17 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     
     // Load shaders
     const [starfieldVert, starfieldFrag] = await Promise.all([
-      fetch('shaders/starfield.vert').then(res => res.text()),
-      fetch('shaders/starfield.frag').then(res => res.text())
-    ]);
+      fetch('/shaders/starfield.vert').then(res => res.text()),
+      fetch('/shaders/starfield.frag').then(res => res.text())
+    ]).catch(err => {
+      console.error('Error loading shaders:', err);
+      return ['', ''];
+    });
+
+    if (!starfieldVert || !starfieldFrag) {
+      console.warn('Shaders failed to load. The background will not be rendered properly.');
+      return;
+    }
 
     const count = 50000;
     const geometry = new THREE.BufferGeometry();
@@ -105,11 +113,13 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     this.isLaunching = true;
 
     // Warp speed animation
-    gsap.to(this.starMaterial.uniforms['uWarpSpeed'], {
-      value: 15.0,
-      duration: 1.2,
-      ease: 'power2.in'
-    });
+    if (this.starMaterial && this.starMaterial.uniforms) {
+      gsap.to(this.starMaterial.uniforms['uWarpSpeed'], {
+        value: 15.0,
+        duration: 1.2,
+        ease: 'power2.in'
+      });
+    }
 
     // Fade out UI
     gsap.to('.ui-overlay', {

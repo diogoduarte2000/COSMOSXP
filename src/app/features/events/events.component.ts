@@ -42,8 +42,8 @@ export class EventsComponent implements AfterViewInit, OnDestroy {
 
     // Black Hole Accretion Disk
     const [vert, frag] = await Promise.all([
-      fetch('shaders/blackhole.vert').then(r => r.text()),
-      fetch('shaders/blackhole.frag').then(r => r.text())
+      fetch('/shaders/blackhole.vert').then(r => r.text()),
+      fetch('/shaders/blackhole.frag').then(r => r.text())
     ]);
 
     const geometry = new THREE.PlaneGeometry(10, 10);
