@@ -1,27 +1,63 @@
-# Cosmosxp
+## 🌌 CósmosXP — Interactive Solar System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+Angular 18
+Three.js
+WebGL
+TypeScript
+3D Interactivo
+Descrição
 
-## Development server
+**🔗 Live demo:** https://cosmosxp-tmxp.vercel.app/solar-system
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O CósmosXP é uma aplicação web 3D que recria o Sistema Solar de forma visual e interactiva. Usando Three.js sobre WebGL, renderiza os planetas com texturas reais, órbitas animadas e iluminação dinâmica proveniente do Sol. A arquitectura é construída com Angular 18, aproveitando componentes standalone e uma estrutura modular para separar a cena 3D da lógica de dados planetários.
 
-## Code scaffolding
+O utilizador pode explorar cada planeta individualmente, visualizando as suas características reais — diâmetro, distância ao Sol, período orbital e composição. A câmara é controlável por rato/touch, permitindo zoom, rotação e pan em toda a cena.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Funcionalidades
 
-## Build
+8 planetas com texturas e escalas proporcionais
+Órbitas animadas em tempo real
+Painel de detalhes por planeta
+Câmara 3D com OrbitControls
+Iluminação dinâmica com PointLight solar
+Responsivo para desktop e mobile
+Stack de tecnologias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ Angular 18
 
-## Running unit tests
+Framework principal. Componentes standalone, serviços injectáveis e routing SPA.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ Three.js
 
-## Running end-to-end tests
+Engine 3D. Geometrias, materiais, luzes, texturas e animação via requestAnimationFrame.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ WebGL
 
-## Further help
+API de baixo nível para renderização GPU. Utilizado através da abstracção do Three.js.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+ TypeScript
+
+Tipagem estática para modelos de dados planetários, serviços e lógica da cena 3D.
+
+ HTML5 Canvas
+
+Elemento canvas como alvo de renderização do WebGL/Three.js.
+
+ Vercel
+
+Deploy automático a partir do repositório GitHub com CI/CD gratuito.
+
+### Tech Stack
+- **Angular 18** — SPA framework with standalone components
+- **Three.js** — 3D rendering engine (geometries, materials, lighting)
+- **WebGL** — GPU-accelerated rendering via Three.js abstraction
+- **TypeScript** — typed data models and scene logic
+- **Vercel** — CI/CD deployment from GitHub
+
+### Features
+- 8 planets with real textures and proportional scales
+- Real-time animated orbits
+- Dynamic solar lighting (PointLight)
+- Orbit camera with zoom, pan & rotate
+- Per-planet detail panel
+- Responsive for desktop & mobile
